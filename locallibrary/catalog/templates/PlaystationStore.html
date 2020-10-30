@@ -1,0 +1,128 @@
+{% extends "base_generic.html" %}
+    
+{% block content %}
+<article>
+  <!--  BANNER SELECTOR -->
+  <div class="container col-md-10" id="canvas">
+    <div class="container col-md-4 form-inline" id="banner_selector">
+      <div id="banner_selector_spacing">
+        <a href="#">
+          <h2 id="banner_selector_tittle">Playstation</h2>
+        </a>
+        {% load static %}
+        <img src="{% static 'img/icons/space-bar.png' %}" alt="" height="30px" id="banner_selector_bar">
+        <a href="{% url 'index' %}">
+          <h2 id="banner_selector_tittle">Xbox</h2>
+        </a>
+        <img src="{% static 'img/icons/space-bar.png' %}" alt="" height="30px" id="banner_selector_bar">
+        <a href="{% url 'index' %}">
+          <h2 id="banner_selector_tittle">Nintendo</h2>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Playstation</h1>
+    </div>
+    <div class="container col-md-11">
+
+      <div class="row" id="product_canvas">       
+        
+        <div class="col-md-2" id="product">
+            <div class="card text-center">
+              <div class="card-body">
+                <img id="card" src="{% static 'img/products/ffxvi_product.jpg' %}" alt="">
+                <h4 class="card-title">Final Fantasy VXI <br><br></h4>
+                <a href="#" class="btn btn-primary" onclick="addToCart()">Pre-Order</a>
+              </div>
+            </div>          
+        </div>
+
+        
+
+        <div class="col-md-2" id="product">        
+            <div class="card text-center">
+              <div class="card-body">
+                <img id="card" src="{% static 'img/products/ffvii_product.jpg' %}" alt="" >
+                <h4 class="card-title">Final Fantasy VII Remake <br><br></h4>
+                <a href="#" class="btn btn-primary" onclick="addToCart()">Add to cart</a>
+              </div>
+            </div>          
+        </div>
+        
+        
+
+        <div class="col-md-2" id="product">        
+            <div class="card text-center">
+              <div class="card-body">
+                <img id="card" src="{% static 'img/products/doom-eternal_product.jpg' %}" alt="">
+                <h4 class="card-title">Doom Eternal <br><br></h4>
+                <a href="#" class="btn btn-primary" onclick="addToCart()">Add to cart</a>
+              </div>
+            </div>          
+        </div>
+        
+        
+
+        <div class="col-md-2" id="product">        
+          <div class="card text-center">
+            <div class="card-body">
+              <img id="card" src="{% static 'img/products/nier-automata_product.jpg' %}" alt="">
+              <h4 class="card-title">NieR Automata <br><br></h4>
+              <a href="#" class="btn btn-primary" onclick="addToCart()">Add to cart</a>
+            </div>
+          </div>          
+        </div>
+        
+
+
+        <div class="col-md-2" id="product">
+          <div class="card text-center">
+            <div class="card-body">
+              <img id="card" src="{% static 'img/products/dbz_product.jpg' %}" alt="">
+              <h4 class="card-title">Dragon Ball FighterZ <br><br></h4>
+              <a href="#" class="btn btn-primary" onclick="addToCart()">Add to cart</a>
+            </div>
+          </div>          
+        </div>
+
+      
+
+        <div class="col-md-2" id="product">        
+          <div class="card text-center">
+            <div class="card-body">
+              <img id="card" src="{% static 'img/products/Dragon-Quest-XI_product.jpg' %}" alt="">
+              <h4 class="card-title">Dragon Quest XI <br><br></h4>
+              <a href="#" class="btn btn-primary" onclick="addToCart()">Add to cart</a>
+            </div>
+          </div>          
+        </div>
+      
+      
+
+        <div class="col-md-2" id="product">        
+          <div class="card text-center">
+            <div class="card-body">
+              <img id="card" src="{% static 'img/products/Super-neptunia_product.jpg' %}" alt="">
+              <h4 class="card-title">Super Neptunia RPG <br><br></h4>
+              <a href="#" class="btn btn-primary" onclick="addToCart()">Add to cart</a>
+            </div>
+          </div>          
+        </div>
+      
+      
+
+        <div class="col-md-2" id="product">        
+          <div class="card text-center">
+            <div class="card-body">
+              <img id="card" src="{% static 'img/products/mhw_product.jpg' %}" alt="">
+              <h4 class="card-title">Monster Hunter World Iceborne</h4>
+              <a href="#" class="btn btn-primary" onclick="addToCart()">Add to cart</a>
+            </div>
+          </div>          
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock %}

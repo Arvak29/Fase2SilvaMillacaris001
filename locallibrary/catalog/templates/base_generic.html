@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Retro Games</title>{% endblock %}
+    <!--Static-->
+    <!--CSS-->
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <!--Bootstrap-->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!--Custom-->
+    <script src="{% static 'JS/functions.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-dark navbar-#1aff008c sticky-top">
+          <div class="row" id="logo_web">
+            {% block nav %}
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img src="{% static 'img/Espeon_pixel.png' %}" width="40" height="40" alt="">
+            </a>
+            {% endblock %}
+            <h1>Retro Games</h1>
+          </div>
+          
+          
+          <!--  NAVBAR TOGGLER  -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+          </button>   
+              {% block navbar %}
+              <div class="collapse navbar-collapse" id="opciones">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="opciones" href="#">NEWS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="opciones" href="#">ABOUT</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="opciones dropdown-toggle" href="#" id="dropdownStore" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STORE</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownStore">
+                      <a class="dropdown-item" href="{% url 'PlaystationStore' %}">Playstation</a>
+                      <a class="dropdown-item" href="{% url 'index' %}">Xbox</a>
+                      <a class="dropdown-item" href="{% url 'index' %}">Nintendo</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="opciones" href="#">COMMUNITY</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="opciones" href="#">CONTACT</a>
+                  </li>
+                </ul>
+                {% endblock %}
+                <!--  SEARCH BAR -->
+                <div id="correcion" class="input-group col-md-4">
+                  {% block search %}
+                  <input class="form-control py-2 border-right-0 border" type="search" placeholder="store search..." id="search-input">
+                  <span class="input-group-append">
+                    <button class="btn btn-outline-secondary border-left-0 border" type="button" id="search-input">
+                          <i><img src="{% static 'img/icons/search-icon.png' %}" alt="" width="22"></i>
+                    </button>
+                  </span>
+                  {% endblock %}
+                </div>
+
+                <!--  MODAL -->
+                <div class="navbar-nav ml-auto" id="login_container">
+                  {% block modal %}
+                    <a class="navbar-brand" id="login" onclick="openModal()" style="width:auto;">
+                        <img src="{% static 'img/icons/person-icon.png' %}" width="30" alt=""> 
+                        <p class="sign_in" id="login">Log in</p>
+
+                    </a>
+                    <div id="id01" class="modal">
+              
+                      <form class="modal-content animate" action="index.html" method="post">
+                        <div class="imgcontainer">
+                          <span onclick="closeModal()" class="close" title="Close Modal">&times;</span>
+                          <img src="{% static 'img/Espeon_pixel.png' %}" alt="Avatar" class="avatar">
+                        </div>
+  
+                        <div class="container" id="modal_container">
+                          <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter  Username" name="uname" required>
+                          </div>
+                          <div class="container">
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter  Password" name="psw" required>
+                          </div>
+                          <div class="container" id="modal_buttons">
+                            <button class="btn btn-primary" type="submit" id="btn_login">Login</button>
+                            <span class="psw"><a href="{% url 'index' %}" id="signUp">Sign Up</a></span>
+                            <div class="form-check" id="remember">
+                              <input class="form-check" type="checkbox" checked="checked" name="remember">
+                              <p>Remember me</p>
+                            </div>
+                          </div>
+                        </div>
+                        <script>closeModal2()</script>
+                      </form>
+                    </div> 
+                    {% endblock %}
+                </div>
+              </div>
+        </nav>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+    
+    {% block footer %}
+    <footer class="site-footer">
+      <div class="col-md-3">
+        <h2>
+          <img src="{% static 'img/Espeon_pixel.png' %}" width="30" height="30" alt="">
+          Retro Games
+        </h2>
+      </div>
+      <div class="container col-md-11">
+        <div class="col-md-6">
+          <address>
+            #1265, Street of place,<br>
+            City of place,<br>
+            Country.
+          </address>
+        </div>
+        <div class="bottom-footer">
+          <div class="col-md-7">
+            <p id="rights_reserved">© 2020, Retro Games, Inc. All rights reserved. Espeon and its logo are Retro Games’s trademarks or registered trademarks in the US and elsewhere.</p>
+          </div>
+          <br>
+        </div>
+      </div>
+    </footer>
+    {% endblock %}
+</body>
+</html>
