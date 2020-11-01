@@ -46,9 +46,9 @@
                   <li class="nav-item dropdown">
                     <a class="opciones dropdown-toggle" href="#" id="dropdownStore" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STORE</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownStore">
-                      <a class="dropdown-item" href="{% url 'PlaystationStore' %}">Playstation</a>
-                      <a class="dropdown-item" href="{% url 'index' %}">Xbox</a>
-                      <a class="dropdown-item" href="{% url 'index' %}">Nintendo</a>
+                      <a class="dropdown-item" href="/Store/1">Playstation</a>
+                      <a class="dropdown-item" href="/Store/2">Xbox</a>
+                      <a class="dropdown-item" href="/Store/3">Nintendo</a>
                     </div>
                   </li>
                   <li class="nav-item">
@@ -97,8 +97,8 @@
                             <input type="password" placeholder="Enter  Password" name="psw" required>
                           </div>
                           <div class="container" id="modal_buttons">
-                            <button class="btn btn-primary" type="submit" id="btn_login">Login</button>
-                            <span class="psw"><a href="{% url 'index' %}" id="signUp">Sign Up</a></span>
+                            <button class="btn" type="submit" id="btn_login">Login</button>
+                            <span class="psw"><a href="/user/create/" id="signUp">Sign Up</a></span>
                             <div class="form-check" id="remember">
                               <input class="form-check" type="checkbox" checked="checked" name="remember">
                               <p>Remember me</p>

@@ -18,6 +18,9 @@ class Plataform(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('game-detail', args=[str(self.id)])
+
 class Developer(models.Model):
     name = models.CharField(max_length=100)
     #game = models.ForeignKey('Game', on_delete=models.SET_NULL, null=True)
@@ -25,15 +28,28 @@ class Developer(models.Model):
     def __str__(self):
         return self.name
 
+class User(models.Model):
+    username = models.CharField(max_length=30)
+    password = models.CharField(max_length=30)
+    birth_date = models.DateField(null=True, blank=True)
+    email = models.EmailField(blank=True)
+
+    def get_absolute_url(self):
+        return reverse('user_detail', args=[str(self.id)])
+    
+    def __str__(self):
+        return f'{self.username} {self.email}'
+
 class Game(models.Model):
 
     title = models.CharField(max_length=100)
-    developer = models.ForeignKey('Developer', on_delete=models.SET_NULL, null=True)
+    developer = models.ManyToManyField(Developer)
     description = models.TextField(max_length=1000, help_text='Enter a brief description of the game')
     genre = models.ManyToManyField(Genre)
-    plataform = models.ManyToManyField(Plataform)
+    plataform = models.ForeignKey('Plataform', on_delete=models.SET_NULL, null=True)
     players = models.IntegerField(null=True, blank=True)
     price = models.CharField(max_length=9)
+    img = models.ImageField(null=True, blank=True, upload_to ='covers')
 
     def __str__(self):
         return self.title

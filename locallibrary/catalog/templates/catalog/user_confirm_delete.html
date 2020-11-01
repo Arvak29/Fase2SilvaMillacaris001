@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="container col-md-4" id="canvas_r">
+    <div class="container">
+        <h2 id="sign_up">Delete User</h2>
+        <label>Are you sure you want to delete this user? </label>
+        <br><br>
+        <h3 id="user_detail">{{user.username}}</h3>
+        <br><br>
+        <form action="" method="post">
+            <div id="button_r">
+                {% csrf_token %}
+                <input type="submit" action="" value="Delete" class="btn">
+            </div>
+        </form>
+        <br><br>
+
+    </div>
+</div>
+{% endblock %}

@@ -15,6 +15,7 @@
 }
 
 /*BUTTONS*/
+
 #btn_login:focus{
     outline-color: #9c6ffc41 !important;
 }
@@ -363,6 +364,9 @@ h4{
     margin-top: 100px;
     margin-bottom: 100px;
     border: 1px solid #9c6ffc8e;
+    box-shadow: 0 0 8px 1px #9c6ffc41,  /* inner*/
+                0 0 6px 1px #9c6ffc41, /* middle*/
+                0 0 8px 1px #9c6ffc41; /* outer*/
 }
 
 #sign_up{
@@ -372,6 +376,19 @@ h4{
     font-family: arcade;
     letter-spacing: 5px;
     padding-top: 8px;
+}
+
+#user_detail{
+    text-align: center;
+    color: #1AFF00;
+    font-size: 24px;
+    font-family: arcade;
+    letter-spacing: 5px;
+    padding-top: 8px;
+    box-shadow: 0 0 8px 1px #9c6ffc41,  /* inner*/
+                0 0 6px 1px #9c6ffc41, /* middle*/
+                0 0 8px 1px #9c6ffc41; /* outer*/
+    border-radius: 8px;
 }
 
 #button_r{
@@ -595,8 +612,8 @@ img.avatar {
 }
 
 .card-body h4{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 15px;
     font-family: Arial;
     color: white;
@@ -630,4 +647,12 @@ img.avatar {
     #correcion{
         display: none;
     }
+}
+
+#game_details{
+    color: #1AFF00 !important;
+    letter-spacing: 2px !important;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 12px;
 }

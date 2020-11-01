@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="container col-md-4" id="canvas_r">
+    <div class="container">
+        <h2 id="sign_up">User Created Correctly</h2>
+        <br>
+        <div class="form-group">
+            <label >User: </label>
+            <h3 id="user_detail">{{user.username}}</h3>
+        </div>
+        <div class="form-group">
+            <label >Email: </label>
+            <h3 id="user_detail">{{user.email}}</h3>
+        </div>
+
+        <br><br>
+            <div id="button_r">
+                <a class="btn" value="Submit" href="{% url 'index' %}">Continue</a>
+            </div>
+        <br><br>
+    </div>
+</div>
+
+{% endblock %}

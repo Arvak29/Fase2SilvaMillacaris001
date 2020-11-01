@@ -1,0 +1,52 @@
+{% extends "base_generic.html" %}
+    
+{% block content %}
+<article>
+  <!--  BANNER SELECTOR -->
+  <div class="container col-md-10" id="canvas">
+    <div class="container col-md-4 form-inline" id="banner_selector">
+      <div id="banner_selector_spacing">
+        <a href="/Store/1">
+          <h2 id="banner_selector_tittle">Playstation</h2>
+        </a>
+        {% load static %}
+        <img src="{% static 'img/icons/space-bar.png' %}" alt="" height="30px" id="banner_selector_bar">
+        <a href="/Store/2">
+          <h2 id="banner_selector_tittle">Xbox</h2>
+        </a>
+        <img src="{% static 'img/icons/space-bar.png' %}" alt="" height="30px" id="banner_selector_bar">
+        <a href="/Store/3">
+          <h2 id="banner_selector_tittle">Nintendo</h2>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <h1>{{ plataform.name }}</h1>
+    </div>
+    <div class="container col-md-11">
+
+      <div class="row" id="product_canvas">       
+        
+        {% for game in plataform.game_set.all %}
+        <div class="col-md-2" id="product">
+            <div class="card text-center">
+              <div class="card-body">
+                
+                <img id="card" src="{{game.img.url}}" alt="">
+                
+                
+                <h4 class="card-title">{{game.title}} </h4>
+                
+                <h4 id="game_details" class="card-title">{{game.price}} </h4>
+                <a href="#" class="btn" onclick="addToCart()">Add to cart</a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+        
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock %}

@@ -1,0 +1,3 @@
+1 = PLaystation
+2 = Xbox One
+3 = Nintendo
